@@ -15,7 +15,7 @@ private:
 
 int main()
 {
-
+	
 }
 
 void main2()
