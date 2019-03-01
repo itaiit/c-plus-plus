@@ -15,19 +15,7 @@ private:
 
 int main()
 {
-	std::shared_ptr<int> sptr(new int(1));
-	std::weak_ptr<int> wptr = sptr;
-	cout << "wptr:" << wptr.lock() << ", sptr:" << sptr << endl;
-	sptr = nullptr;
-	
-	if ((wptr.lock()))
-	{
-		cout << "sptr2 is null." << endl;
-		return 0;
-	}
-	shared_ptr<int> sptr2 = wptr.lock();
-	*sptr2 = 4;
-	cout << "*sptr:" << *sptr << endl;
+
 	
 	return 0;
 }
