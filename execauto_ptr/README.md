@@ -81,6 +81,8 @@ void main1()
 >bootstrap
 
 >.\b2
+```
+
+![](2019-03-01_143504.png)
 
 完成后，注意控制台的提示，需要简单配置visual studio
-```

@@ -13,6 +13,25 @@ private:
 	double dValue;
 };
 
+int main()
+{
+	std::shared_ptr<int> sptr(new int(1));
+	std::weak_ptr<int> wptr = sptr;
+	cout << "wptr:" << wptr.lock() << ", sptr:" << sptr << endl;
+	sptr = nullptr;
+	
+	if ((wptr.lock()))
+	{
+		cout << "sptr2 is null." << endl;
+		return 0;
+	}
+	shared_ptr<int> sptr2 = wptr.lock();
+	*sptr2 = 4;
+	cout << "*sptr:" << *sptr << endl;
+	
+	return 0;
+}
+
 void main6()
 {
 	// 智能指针auto_ptr使用中的问题,auto_ptr已被弃用
@@ -53,7 +72,7 @@ void main3()
 	cout << *p << endl;
 }
 
-void main()
+void main2()
 {
 	// 此时不会执行dou的析构函数，会造成内存泄漏
 	// 需要显示的执行delete dou
