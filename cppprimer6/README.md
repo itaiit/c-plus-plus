@@ -142,7 +142,7 @@ void fooBar()
 {
 	void printa(int); // 会隐匿掉其他的重载函数
 	printa("");	// 编译报错
-    printa(10); // 编译通过
+	printa(10); // 编译通过
 }
 ```
 
