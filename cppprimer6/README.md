@@ -31,10 +31,12 @@ vector<string> process()
 
 1. 参数为数组的引用
 
+   _数组的引用所引用的数组，大小必须确定，才能使用`sizeof`运算符，指针情况相同_。
+
    ```c++
    int func(int (&arr)[2])
    {
-       // sizeof(arr)	错误，sizeof的参数必须为一个对象，而引用不是对象
+       sizeof(arr)
    	return arr[0];
    }
    int main()
