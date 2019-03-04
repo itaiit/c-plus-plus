@@ -1,4 +1,4 @@
-﻿8#include <iostream>
+﻿#include <iostream>
 #include <memory>
 
 using namespace std;
