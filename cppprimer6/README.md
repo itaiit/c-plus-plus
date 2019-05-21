@@ -148,3 +148,52 @@ void fooBar()
 }
 ```
 
+## 函数指针
+
+函数的类型包括：函数返回值和形参类型。
+
+比如函数：
+
+```cpp
+bool lengthCompare(const string&, const string&);
+```
+
+的类型为`bool (const string &, const string &)`。声明一个可以指向该函数的指针，只需要将函数名替换为指针即可。
+
+```cpp
+bool (*pf) (const string &, const string &);
+```
+
+### 定义函数类型别名
+
+当我们将函数类型作为某个函数的参数类型时，如下所示：
+
+```cpp
+void useBigger(const string &s1, const string& s2, 
+               bool (*pf)(const string &, const string &))
+```
+
+将会显得特别繁琐，可以通过类型别名的方式简化：
+
+```cpp
+typedef bool (*FuncP)(cosnt string &, const string &);
+```
+
+这样的话，上面的函数`userBigger`可以定义为：
+
+```cpp
+void useBigger(const string &, const string &, FuncP);
+```
+
+### 类成员函数指针
+
+特别的则是类成员函数指针：
+
+```cpp
+void (类名::*Func)(const string &, const string &);
+```
+
+待整理：
+
+1. std::function<T> func；
+2. std::bind()；
