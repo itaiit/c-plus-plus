@@ -23,4 +23,7 @@ int main()
 	cout << "pair.first:" << pp.first << endl;
 	cout << "pair.second:" << pp.second << endl;
 
+	map<string, int>::iterator iter = mp.find("pairKey");
+	cout << "first:" << iter->first << ", second:" << iter->second << endl;
+
 }
