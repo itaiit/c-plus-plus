@@ -1,8 +1,12 @@
 ﻿#include "pch.h"
 #include <iostream>
 
+using namespace std;
+
 struct OuterStruct
 {
+
+	const static int i = 100;
 
 	// 无作用域枚举
 	enum InnerEnum
@@ -12,7 +16,7 @@ struct OuterStruct
 		BANANA,
 		PICH,
 	};
-	enum struct InnerEnumTest
+	enum class InnerEnumTest
 	{
 		APPLE,
 	};
@@ -23,7 +27,7 @@ struct OuterStruct
 
 
 	enum更显得是一种新的数据类型，拿上面为例，
-	enum里面的值也都是InnerEnum类型，理解为一次性声明了4个struct的类型为InnerEnum的属性成员，并且都具有默认值
+	enum里面的值也都是"InnerEnum类型"，理解为一次性声明了4个struct的类型为InnerEnum的属性成员，并且都具有默认值
 
 	未指明enum中元素的类型时，则默认是int类型
 
@@ -43,10 +47,14 @@ public:
 
 int main()
 {
-	OuterStruct::InnerEnum ie;
-	ie = OuterStruct::APPLE;
-	std::cout << ie << std::endl;
+	OuterStruct::InnerEnum ie = OuterStruct::InnerEnum::APPLE;
 
-	EClass::ClaEnum ce;
-	ce = EClass::ClaEnum::ONE;
+	OuterStruct os;
+
+	int p = os.i;
+	int pp = OuterStruct::i;
+
+	cout << ie << endl;
+
+	OuterStruct::InnerEnumTest iet = OuterStruct::InnerEnumTest::APPLE;
 }
